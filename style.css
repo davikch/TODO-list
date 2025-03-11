@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e3dac9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: #ffffff;
+  padding: 10px;
+  width: 80%;
+  border-radius: 25px;
+  flex-direction: column;
+  top: 3%;
+  position: absolute;
+}
+
+.todo-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  justify-content: center;
+}
+
+.todo-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 25px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.todo-body input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 15px 0;
+  font-size: 20px;
+  width: 100%;
+}
+
+.todo-body form {
+  width: 100%;
+}
+
+ul li {
+  list-style: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+@keyframes overshoot {
+  0% {
+    opacity: 0.1;
+    transform: translateY(-15px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes die {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  80% {
+    opacity: 0.2;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(-10px);
+  }
+}
+
+.task-added {
+  animation: overshoot 0.3s ease-in;
+}
+
+.task-removed {
+  animation: die 0.2s ease-out;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #edeef0;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: calc(95% - 40px);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-left: auto; /* Push the button group to the right */
+}
+
+li button {
+  transition: background 0.2s ease;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+li .delete-button {
+  background: #ff4b4b;
+}
+
+li .edit-button {
+  background: #ffcf40;
+}
+
+li .done-button {
+  background: #32cf40;
+}
+
+li:not(.completed) .delete-button:hover,
+li:not(.completed) .edit-button:hover,
+li:not(.completed) .done-button:hover {
+  filter: saturate(120%);
+  filter: brightness(80%);
+}
+
+li:not(.completed) .delete-button:active,
+li:not(.completed) .edit-button:active,
+li:not(.completed) .done-button:active {
+  filter: saturate(140%);
+  filter: brightness(60%);
+}
+
+li.completed button {
+  background: #888888;
+}
+
+li.completed span {
+  text-decoration: line-through;
+}
