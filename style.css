@@ -163,7 +163,7 @@ li:not(.completed) button:active {
 }
 
 li.completed button {
-  background: #888888;
+  filter: saturate(10%);
 }
 
 li.completed span {
