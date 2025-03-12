@@ -157,15 +157,13 @@ li .done-button {
 li:not(.completed) .delete-button:hover,
 li:not(.completed) .edit-button:hover,
 li:not(.completed) .done-button:hover {
-  filter: saturate(120%);
-  filter: brightness(80%);
+  filter: saturate(80%) hue-rotate(-15deg) brightness(80%);
 }
 
 li:not(.completed) .delete-button:active,
 li:not(.completed) .edit-button:active,
 li:not(.completed) .done-button:active {
-  filter: saturate(140%);
-  filter: brightness(60%);
+  filter: saturate(70%) hue-rotate(-20deg) brightness(70%);
 }
 
 li.completed button {

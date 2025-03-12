@@ -17,13 +17,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  function addTask(taskText) {
+  function addTask(taskText, isCompleted = false) {
     const li = document.createElement("li");
 
     // Create a span to hold the task text
     const span = document.createElement("span");
     span.textContent = taskText;
     li.appendChild(span);
+
+    if (isCompleted) {
+      li.classList.add("completed");
+    }
 
     const buttons = document.createElement("div");
     buttons.classList.add("button-group");
